@@ -1212,6 +1212,7 @@ body {
   position: relative;
   height: 500px;
   animation: slideInRight 1s var(--transition-luxury);
+  margin-top: -120px; /* Move visual up */
 }
 
 .hero__hologram {
