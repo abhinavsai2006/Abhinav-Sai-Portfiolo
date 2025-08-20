@@ -1,0 +1,849 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Madapati Abhinav Sai | AI & ML Specialist | Premium Portfolio</title>
+    <meta name="description" content="Premium portfolio of Madapati Abhinav Sai - B.Tech CSE Student at VIT-AP University specializing in AI & Machine Learning. Exploring Programming, AI & Software Development.">
+    <meta name="keywords" content="Madapati Abhinav Sai, AI, Machine Learning, VIT-AP University, Computer Science, Portfolio, Developer">
+    <meta name="author" content="Madapati Abhinav Sai">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Particle Canvas -->
+    <canvas id="particles-canvas"></canvas>
+    
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loading-screen">
+        <div class="loading-content">
+            <div class="loading-logo">AS</div>
+            <div class="loading-text">Loading Portfolio...</div>
+            <div class="loading-bar">
+                <div class="loading-progress"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header/Navigation -->
+    <header class="header" id="header">
+        <nav class="nav container">
+            <div class="nav__brand">
+                <h3 class="nav__logo">Abhinav Sai</h3>
+            </div>
+            
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li class="nav__item">
+                        <a href="#home" class="nav__link active-link">Home</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#about" class="nav__link">About</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#projects" class="nav__link">Projects</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#skills" class="nav__link">Skills</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#experience" class="nav__link">Experience</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#contact" class="nav__link">Contact</a>
+                    </li>
+                </ul>
+                <div class="nav__close" id="nav-close">
+                    <span>&times;</span>
+                </div>
+            </div>
+
+            <div class="nav__actions">
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+                    <span class="theme-toggle__icon">🌙</span>
+                </button>
+                <div class="nav__toggle" id="nav-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+        <!-- Hero Section -->
+        <section class="hero section" id="home">
+            <div class="hero__container container">
+                <div class="hero__content">
+                    <span class="hero__greeting">Hello, I'm</span>
+                    <h1 class="main-title">
+                                                                        <span id="typing-name" style="position:absolute;opacity:0;pointer-events:none;">Madapati Abhinav Sai</span>
+                                                                        <div style="display:flex;justify-content:center;align-items:center;width:100%;">
+                                                                            <svg id="svg-typing" width="100%" height="110" viewBox="0 0 900 110" style="max-width:900px;min-width:320px;">
+                                                                                <text id="svg-typing-text" x="50%" y="80" font-size="80" fill="#fff9d6" font-family="'Inter', sans-serif" letter-spacing="2" text-anchor="middle" alignment-baseline="middle">
+                                                                                    Madapati Abhinav Sai
+                                                                                </text>
+                                                                            </svg>
+                                                                        </div>
+                    </h1>
+                    <h2 class="hero__subtitle">B.Tech CSE Student @VIT-AP University</h2>
+                    <p class="hero__description">
+                        Exploring Programming, AI & Software Development | Lifelong Learner passionate about building innovative solutions that make a real impact through technology.
+                    </p>
+                    <div class="hero__stats">
+                        <div class="stat-item">
+                            <span class="stat-number">29</span>
+                            <span class="stat-label">GitHub Contributions</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">5</span>
+                            <span class="stat-label">Active Projects</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">432</span>
+                            <span class="stat-label">LinkedIn Connections</span>
+                        </div>
+                    </div>
+                    <div class="hero__buttons">
+                        <a href="#projects" class="btn btn--primary">View Projects</a>
+                        <a href="https://abhinavsai.vercel.app" target="_blank" class="btn btn--outline">Live Portfolio</a>
+                        <a href="mailto:mndabhinavsai@gmail.com" class="btn btn--secondary">Get In Touch</a>
+                    </div>
+                </div>
+                <div class="hero__visual">
+                    <div class="hero__hologram">
+                        <div class="hologram-ring"></div>
+                        <div class="hologram-ring"></div>
+                        <div class="hologram-ring"></div>
+                        <div class="hologram-center">
+                            <div class="profile-avatar">AS</div>
+                        </div>
+                    </div>
+                    <div class="hero__floating-elements">
+                        <div class="floating-element" data-speed="0.5">🚀</div>
+                        <div class="floating-element" data-speed="0.3">🧠</div>
+                        <div class="floating-element" data-speed="0.7">⚡</div>
+                        <div class="floating-element" data-speed="0.4">💻</div>
+                        <div class="floating-element" data-speed="0.6">🎯</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <script>
+        // SVG Typing animation for name
+        document.addEventListener('DOMContentLoaded', function() {
+            var svgText = document.getElementById('svg-typing-text');
+            var name = 'Madapati Abhinav Sai';
+            var chars = name.split('');
+            svgText.textContent = '';
+            var i = 0;
+            var speed = 120;
+            function svgTypeWriter() {
+                if (i < chars.length) {
+                    svgText.textContent += chars[i];
+                    i++;
+                    setTimeout(svgTypeWriter, speed);
+                }
+            }
+            svgTypeWriter();
+        });
+        </script>
+
+        <!-- About Section -->
+        <section class="about section" id="about">
+            <div class="container">
+                <div class="section__header">
+                    <span class="section__subtitle">Get to know me</span>
+                    <h2 class="section__title">About Me</h2>
+                </div>
+
+                <div class="about__container">
+                    <div class="about__content">
+                        <div class="about__info">
+                            <h3 class="about__title">Passionate AI & ML Student</h3>
+                            <p class="about__description">
+                                I'm a Computer Science and Engineering student at VIT-AP University with a keen interest in programming, creative problem-solving, and real-world applications of technology. My expertise spans artificial intelligence, machine learning, and full-stack development.
+                            </p>
+                            <p class="about__description">
+                                Currently exploring software development, artificial intelligence, and automation with a focus on building impactful solutions. I'm passionate about learning new technologies and contributing to innovative projects that solve real-world problems.
+                            </p>
+                            
+                            <div class="about__interests">
+                                <h4 class="about__interests-title">Key Interests</h4>
+                                <div class="interests__grid">
+                                    <div class="interest__item">
+                                        <span class="interest__icon">🧠</span>
+                                        <span class="interest__text">Artificial Intelligence</span>
+                                    </div>
+                                    <div class="interest__item">
+                                        <span class="interest__icon">🤖</span>
+                                        <span class="interest__text">Machine Learning</span>
+                                    </div>
+                                    <div class="interest__item">
+                                        <span class="interest__icon">💻</span>
+                                        <span class="interest__text">Software Development</span>
+                                    </div>
+                                    <div class="interest__item">
+                                        <span class="interest__icon">📊</span>
+                                        <span class="interest__text">Data Analytics</span>
+                                    </div>
+                                    <div class="interest__item">
+                                        <span class="interest__icon">🌐</span>
+                                        <span class="interest__text">Web Development</span>
+                                    </div>
+                                    <div class="interest__item">
+                                        <span class="interest__icon">🔬</span>
+                                        <span class="interest__text">Research & Innovation</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="about__languages">
+                                <h4 class="about__languages-title">Languages</h4>
+                                <div class="languages__list">
+                                    <div class="language__item">
+                                        <span class="language__name">Telugu</span>
+                                        <span class="language__level">Native</span>
+                                    </div>
+                                    <div class="language__item">
+                                        <span class="language__name">English</span>
+                                        <span class="language__level">Professional</span>
+                                    </div>
+                                    <div class="language__item">
+                                        <span class="language__name">Hindi</span>
+                                        <span class="language__level">Limited Working</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="about__education">
+                            <h4 class="about__education-title">Education</h4>
+                            <div class="education__timeline">
+                                <div class="education__item">
+                                    <div class="education__content">
+                                        <h5 class="education__degree">Bachelor of Technology (B.Tech)</h5>
+                                        <p class="education__field">Computer Science and Engineering</p>
+                                        <p class="education__specialization">Specialization: Artificial Intelligence and Machine Learning</p>
+                                        <p class="education__school">VIT-AP University</p>
+                                        <span class="education__duration">2024 - 2028</span>
+                                        <div class="education__courses">
+                                            <h6>Current Courses:</h6>
+                                            <ul>
+                                                <li>Object Oriented Programming using JAVA</li>
+                                                <li>Problem Solving Using Python</li>
+                                                <li>Digital Logic Design</li>
+                                                <li>Modern Physics</li>
+                                                <li>Calculus For Engineers</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="education__item">
+                                    <div class="education__content">
+                                        <h5 class="education__degree">Intermediate</h5>
+                                        <p class="education__school">Narayana Junior College</p>
+                                        <span class="education__duration">2022 - 2024</span>
+                                        <span class="education__grade">Grade A</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="education__item">
+                                    <div class="education__content">
+                                        <h5 class="education__degree">10th Standard</h5>
+                                        <p class="education__school">Sri Chaitanya Techno School</p>
+                                        <span class="education__duration">2019 - 2020</span>
+                                        <span class="education__grade">Grade A</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section class="projects section" id="projects">
+            <div class="container">
+                <div class="section__header">
+                    <span class="section__subtitle">My recent work</span>
+                    <h2 class="section__title">Featured Projects</h2>
+                </div>
+
+                <div class="projects__container">
+                    <div class="project__card" data-category="AI/ML">
+                        <div class="project__image">
+                            <div class="project__placeholder">🧠</div>
+                            <div class="project__overlay">
+                                <div class="project__tech-preview">
+                                    <span>JavaScript</span>
+                                    <span>AI/ML</span>
+                                    <span>Node.js</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project__content">
+                            <div class="project__header">
+                                <h3 class="project__title">AI Career Advisor</h3>
+                                <span class="project__category">AI/ML</span>
+                            </div>
+                            <p class="project__description">
+                                Intelligent career guidance system using machine learning to provide personalized career recommendations based on skills, interests, and market trends.
+                            </p>
+                            <div class="project__features">
+                                <div class="feature">✨ AI-powered career matching</div>
+                                <div class="feature">📊 Skill assessment and gap analysis</div>
+                                <div class="feature">📈 Market trend integration</div>
+                                <div class="feature">🎯 Personalized learning paths</div>
+                            </div>
+                            <div class="project__tech">
+                                <span class="tech__tag">JavaScript</span>
+                                <span class="tech__tag">Machine Learning</span>
+                                <span class="tech__tag">Node.js</span>
+                                <span class="tech__tag">NLP</span>
+                            </div>
+                            <div class="project__stats">
+                                <span class="project__commits">8 commits</span>
+                                <span class="project__status">Active Development</span>
+                            </div>
+                            <div class="project__links">
+                                <a href="https://github.com/abhinavsai2006/ai_carrer_advisor" target="_blank" class="project__link">
+                                    <span>View Code</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project__card" data-category="AI/ML">
+                        <div class="project__image">
+                            <div class="project__placeholder">📰</div>
+                            <div class="project__overlay">
+                                <div class="project__tech-preview">
+                                    <span>Python</span>
+                                    <span>ML</span>
+                                    <span>NLP</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project__content">
+                            <div class="project__header">
+                                <h3 class="project__title">News Credibility Checker</h3>
+                                <span class="project__category">AI/ML</span>
+                            </div>
+                            <p class="project__description">
+                                Advanced machine learning system to detect fake news and assess the credibility of news articles using NLP techniques and sentiment analysis.
+                            </p>
+                            <div class="project__features">
+                                <div class="feature">🔍 Real-time fake news detection</div>
+                                <div class="feature">💭 Sentiment analysis integration</div>
+                                <div class="feature">⭐ Source credibility scoring</div>
+                                <div class="feature">⚖️ Bias detection algorithms</div>
+                            </div>
+                            <div class="project__tech">
+                                <span class="tech__tag">Python</span>
+                                <span class="tech__tag">Machine Learning</span>
+                                <span class="tech__tag">NLP</span>
+                                <span class="tech__tag">TensorFlow</span>
+                                <span class="tech__tag">Flask</span>
+                            </div>
+                            <div class="project__stats">
+                                <span class="project__commits">3 commits</span>
+                                <span class="project__status">Recently Updated</span>
+                            </div>
+                            <div class="project__links">
+                                <a href="https://github.com/abhinavsai2006/News-Credibility-Checker" target="_blank" class="project__link">
+                                    <span>View Code</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project__card" data-category="Web Development">
+                        <div class="project__image">
+                            <div class="project__placeholder">💼</div>
+                            <div class="project__overlay">
+                                <div class="project__tech-preview">
+                                    <span>TypeScript</span>
+                                    <span>React</span>
+                                    <span>CSS3</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project__content">
+                            <div class="project__header">
+                                <h3 class="project__title">Portfolio Website</h3>
+                                <span class="project__category">Web Development</span>
+                            </div>
+                            <p class="project__description">
+                                Modern, responsive portfolio website built with TypeScript and React, showcasing projects and skills with interactive animations and premium design.
+                            </p>
+                            <div class="project__features">
+                                <div class="feature">📱 Responsive design</div>
+                                <div class="feature">✨ Interactive animations</div>
+                                <div class="feature">🎨 Modern UI/UX</div>
+                                <div class="feature">⚡ Optimized performance</div>
+                            </div>
+                            <div class="project__tech">
+                                <span class="tech__tag">TypeScript</span>
+                                <span class="tech__tag">React</span>
+                                <span class="tech__tag">CSS3</span>
+                                <span class="tech__tag">HTML5</span>
+                                <span class="tech__tag">Vercel</span>
+                            </div>
+                            <div class="project__stats">
+                                <span class="project__commits">4 commits</span>
+                                <span class="project__status">Live Production</span>
+                            </div>
+                            <div class="project__links">
+                                <a href="https://github.com/abhinavsai2006/Portfolio" target="_blank" class="project__link">
+                                    <span>View Code</span>
+                                </a>
+                                <a href="https://abhinavsai.vercel.app" target="_blank" class="project__link project__link--primary">
+                                    <span>Live Demo</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project__card" data-category="Tools">
+                        <div class="project__image">
+                            <div class="project__placeholder">⚙️</div>
+                            <div class="project__overlay">
+                                <div class="project__tech-preview">
+                                    <span>Markdown</span>
+                                    <span>GitHub</span>
+                                    <span>APIs</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project__content">
+                            <div class="project__header">
+                                <h3 class="project__title">GitHub Profile Configuration</h3>
+                                <span class="project__category">Tools</span>
+                            </div>
+                            <p class="project__description">
+                                Custom GitHub profile README with dynamic content, statistics, and interactive elements to showcase coding activity and achievements.
+                            </p>
+                            <div class="project__features">
+                                <div class="feature">📊 Dynamic statistics</div>
+                                <div class="feature">📈 Activity tracking</div>
+                                <div class="feature">🎨 Visual skill representation</div>
+                                <div class="feature">🔄 Automated updates</div>
+                            </div>
+                            <div class="project__tech">
+                                <span class="tech__tag">Markdown</span>
+                                <span class="tech__tag">GitHub Actions</span>
+                                <span class="tech__tag">SVG</span>
+                                <span class="tech__tag">APIs</span>
+                            </div>
+                            <div class="project__stats">
+                                <span class="project__commits">2 commits</span>
+                                <span class="project__status">Maintained</span>
+                            </div>
+                            <div class="project__links">
+                                <a href="https://github.com/abhinavsai2006/abhinavsai" target="_blank" class="project__link">
+                                    <span>View Code</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="projects__footer">
+                    <a href="https://github.com/abhinavsai2006" target="_blank" class="btn btn--outline">
+                        View All Projects on GitHub
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section class="skills section" id="skills">
+            <div class="container">
+                <div class="section__header">
+                    <span class="section__subtitle">What I'm good at</span>
+                    <h2 class="section__title">Skills & Expertise</h2>
+                </div>
+
+                <div class="skills__container">
+                    <div class="skills__category">
+                        <h3 class="skills__category-title">Programming Languages</h3>
+                        <div class="skills__grid">
+                            <div class="skill__item">
+                                <div class="skill__header">
+                                    <span class="skill__name">Python</span>
+                                    <span class="skill__percentage">85%</span>
+                                </div>
+                                <div class="skill__bar">
+                                    <div class="skill__progress" style="width: 85%"></div>
+                                </div>
+                                <span class="skill__experience">2 years experience</span>
+                            </div>
+                            <div class="skill__item">
+                                <div class="skill__header">
+                                    <span class="skill__name">Java</span>
+                                    <span class="skill__percentage">80%</span>
+                                </div>
+                                <div class="skill__bar">
+                                    <div class="skill__progress" style="width: 80%"></div>
+                                </div>
+                                <span class="skill__experience">1.5 years experience</span>
+                            </div>
+                            <div class="skill__item">
+                                <div class="skill__header">
+                                    <span class="skill__name">JavaScript</span>
+                                    <span class="skill__percentage">75%</span>
+                                </div>
+                                <div class="skill__bar">
+                                    <div class="skill__progress" style="width: 75%"></div>
+                                </div>
+                                <span class="skill__experience">1 year experience</span>
+                            </div>
+                            <div class="skill__item">
+                                <div class="skill__header">
+                                    <span class="skill__name">TypeScript</span>
+                                    <span class="skill__percentage">70%</span>
+                                </div>
+                                <div class="skill__bar">
+                                    <div class="skill__progress" style="width: 70%"></div>
+                                </div>
+                                <span class="skill__experience">8 months experience</span>
+                            </div>
+                            <div class="skill__item">
+                                <div class="skill__header">
+                                    <span class="skill__name">C Programming</span>
+                                    <span class="skill__percentage">75%</span>
+                                </div>
+                                <div class="skill__bar">
+                                    <div class="skill__progress" style="width: 75%"></div>
+                                </div>
+                                <span class="skill__experience">1.5 years experience</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="skills__category">
+                        <h3 class="skills__category-title">AI & Machine Learning</h3>
+                        <div class="skills__grid">
+                            <div class="skill__item">
+                                <div class="skill__header">
+                                    <span class="skill__name">Machine Learning</span>
+                                    <span class="skill__percentage">75%</span>
+                                </div>
+                                <div class="skill__bar">
+                                    <div class="skill__progress" style="width: 75%"></div>
+                                </div>
+                                <span class="skill__experience">1 year experience</span>
+                            </div>
+                            <div class="skill__item">
+                                <div class="skill__header">
+                                    <span class="skill__name">Natural Language Processing</span>
+                                    <span class="skill__percentage">70%</span>
+                                </div>
+                                <div class="skill__bar">
+                                    <div class="skill__progress" style="width: 70%"></div>
+                                </div>
+                                <span class="skill__experience">8 months experience</span>
+                            </div>
+                            <div class="skill__item">
+                                <div class="skill__header">
+                                    <span class="skill__name">TensorFlow</span>
+                                    <span class="skill__percentage">65%</span>
+                                </div>
+                                <div class="skill__bar">
+                                    <div class="skill__progress" style="width: 65%"></div>
+                                </div>
+                                <span class="skill__experience">6 months experience</span>
+                            </div>
+                            <div class="skill__item">
+                                <div class="skill__header">
+                                    <span class="skill__name">Data Analysis</span>
+                                    <span class="skill__percentage">75%</span>
+                                </div>
+                                <div class="skill__bar">
+                                    <div class="skill__progress" style="width: 75%"></div>
+                                </div>
+                                <span class="skill__experience">1 year experience</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="skills__category">
+                        <h3 class="skills__category-title">Web Development & Tools</h3>
+                        <div class="skills__grid">
+                            <div class="skill__item">
+                                <div class="skill__header">
+                                    <span class="skill__name">React</span>
+                                    <span class="skill__percentage">70%</span>
+                                </div>
+                                <div class="skill__bar">
+                                    <div class="skill__progress" style="width: 70%"></div>
+                                </div>
+                                <span class="skill__experience">8 months experience</span>
+                            </div>
+                            <div class="skill__item">
+                                <div class="skill__header">
+                                    <span class="skill__name">HTML/CSS</span>
+                                    <span class="skill__percentage">80%</span>
+                                </div>
+                                <div class="skill__bar">
+                                    <div class="skill__progress" style="width: 80%"></div>
+                                </div>
+                                <span class="skill__experience">1.5 years experience</span>
+                            </div>
+                            <div class="skill__item">
+                                <div class="skill__header">
+                                    <span class="skill__name">Git/GitHub</span>
+                                    <span class="skill__percentage">75%</span>
+                                </div>
+                                <div class="skill__bar">
+                                    <div class="skill__progress" style="width: 75%"></div>
+                                </div>
+                                <span class="skill__experience">1 year experience</span>
+                            </div>
+                            <div class="skill__item">
+                                <div class="skill__header">
+                                    <span class="skill__name">MATLAB</span>
+                                    <span class="skill__percentage">70%</span>
+                                </div>
+                                <div class="skill__bar">
+                                    <div class="skill__progress" style="width: 70%"></div>
+                                </div>
+                                <span class="skill__experience">6 months experience</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="certifications">
+                    <h3 class="certifications__title">Certifications & Achievements</h3>
+                    <div class="certifications__grid">
+                        <div class="certification__item">
+                            <div class="certification__badge">🎓</div>
+                            <h4 class="certification__name">Google Project Management</h4>
+                            <p class="certification__issuer">Google via Coursera</p>
+                            <span class="certification__date">Aug 2025</span>
+                            <a href="https://www.coursera.org/account/accomplishments/records/752AZKHZUYEJ" target="_blank" class="certification__link">Verify</a>
+                        </div>
+                        <div class="certification__item">
+                            <div class="certification__badge">☕</div>
+                            <h4 class="certification__name">Java Programming Fundamentals</h4>
+                            <p class="certification__issuer">Board Infinity via Coursera</p>
+                            <span class="certification__date">Aug 2025</span>
+                            <a href="https://coursera.org/verify/VWU5SSNKXJ5A" target="_blank" class="certification__link">Verify</a>
+                        </div>
+                        <div class="certification__item">
+                            <div class="certification__badge">📊</div>
+                            <h4 class="certification__name">Deloitte Data Analytics</h4>
+                            <p class="certification__issuer">Deloitte via Forage</p>
+                            <span class="certification__date">Jul 2025</span>
+                            <div class="certification__link">Verified</div>
+                        </div>
+                        <div class="certification__item">
+                            <div class="certification__badge">🔢</div>
+                            <h4 class="certification__name">MATLAB Onramp</h4>
+                            <p class="certification__issuer">MathWorks</p>
+                            <span class="certification__date">May 2025</span>
+                            <div class="certification__link">Certified</div>
+                        </div>
+                        <div class="certification__item">
+                            <div class="certification__badge">💻</div>
+                            <h4 class="certification__name">C Programming</h4>
+                            <p class="certification__issuer">Udemy</p>
+                            <span class="certification__date">Apr 2025</span>
+                            <a href="https://ude.my/UC-64c6623b-1d52-4ec6-b4cd-f2dd0e0dac4e" target="_blank" class="certification__link">Verify</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section class="experience section" id="experience">
+            <div class="container">
+                <div class="section__header">
+                    <span class="section__subtitle">My Journey</span>
+                    <h2 class="section__title">Experience & Activities</h2>
+                </div>
+
+                <div class="experience__timeline">
+                    <div class="timeline__item">
+                        <div class="timeline__marker"></div>
+                        <div class="timeline__content">
+                            <div class="timeline__date">Jul 2025 - Present</div>
+                            <h3 class="timeline__title">Member</h3>
+                            <h4 class="timeline__company">IEEE Student Branch VIT-AP</h4>
+                            <p class="timeline__location">Amaravati, Andhra Pradesh, India</p>
+                            <p class="timeline__description">
+                                Active member of IEEE Student Branch at VIT-AP University, participating in technical workshops, seminars, and collaborative projects. Engaging with cutting-edge research and industry best practices.
+                            </p>
+                            <div class="timeline__achievements">
+                                <div class="achievement">🏆 Participating in IEEE technical events and workshops</div>
+                                <div class="achievement">🤝 Collaborating on student-led technical projects</div>
+                                <div class="achievement">📚 Learning industry best practices and standards</div>
+                                <div class="achievement">🌐 Networking with fellow engineering students</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline__item">
+                        <div class="timeline__marker"></div>
+                        <div class="timeline__content">
+                            <div class="timeline__date">Nov 2024 - Present</div>
+                            <h3 class="timeline__title">Member</h3>
+                            <h4 class="timeline__company">CSI Chapter VIT-AP</h4>
+                            <p class="timeline__location">Amaravati, Andhra Pradesh, India</p>
+                            <p class="timeline__description">
+                                Member of Computer Society of India chapter at VIT-AP, engaging in programming competitions, technical discussions, and skill development activities within the computer science community.
+                            </p>
+                            <div class="timeline__achievements">
+                                <div class="achievement">💻 Participating in coding competitions and hackathons</div>
+                                <div class="achievement">🎤 Attending technical talks and industry sessions</div>
+                                <div class="achievement">🤖 Contributing to peer learning initiatives</div>
+                                <div class="achievement">🔗 Building network within computer science community</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline__item">
+                        <div class="timeline__marker"></div>
+                        <div class="timeline__content">
+                            <div class="timeline__date">2024 - Present</div>
+                            <h3 class="timeline__title">Student & Developer</h3>
+                            <h4 class="timeline__company">Personal Projects & Learning</h4>
+                            <p class="timeline__location">Self-Directed</p>
+                            <p class="timeline__description">
+                                Continuously developing personal projects, learning new technologies, and building expertise in AI/ML, web development, and software engineering through hands-on practice and real-world applications.
+                            </p>
+                            <div class="timeline__achievements">
+                                <div class="achievement">🚀 Developed 5+ active projects on GitHub</div>
+                                <div class="achievement">📈 Earned 5 professional certifications</div>
+                                <div class="achievement">🧠 Mastered multiple programming languages</div>
+                                <div class="achievement">⭐ Built portfolio with modern technologies</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="contact section" id="contact">
+            <div class="container">
+                <div class="section__header">
+                    <span class="section__subtitle">Get in touch</span>
+                    <h2 class="section__title">Let's Work Together</h2>
+                </div>
+
+                <div class="contact__container">
+                    <div class="contact__info">
+                        <h3 class="contact__info-title">Let's discuss your project</h3>
+                        <p class="contact__info-description">
+                            I'm always interested in new opportunities and challenging projects. Whether you have a question about AI/ML, need help with a development project, or just want to connect, feel free to reach out!
+                        </p>
+
+                        <div class="contact__details">
+                            <div class="contact__detail">
+                                <span class="contact__detail-icon">📍</span>
+                                <div class="contact__detail-info">
+                                    <h4 class="contact__detail-title">Location</h4>
+                                    <p class="contact__detail-text">Amaravati, Andhra Pradesh, India</p>
+                                </div>
+                            </div>
+                            <div class="contact__detail">
+                                <span class="contact__detail-icon">📧</span>
+                                <div class="contact__detail-info">
+                                    <h4 class="contact__detail-title">Email</h4>
+                                    <p class="contact__detail-text">mndabhinavsai@gmail.com</p>
+                                </div>
+                            </div>
+                            <div class="contact__detail">
+                                <span class="contact__detail-icon">🎓</span>
+                                <div class="contact__detail-info">
+                                    <h4 class="contact__detail-title">University</h4>
+                                    <p class="contact__detail-text">VIT-AP University</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="contact__social">
+                            <h4 class="contact__social-title">Connect with me</h4>
+                            <div class="social__links">
+                                <a href="https://linkedin.com/in/madapati-abhinav-sai" target="_blank" class="social__link">
+                                    <span>LinkedIn</span>
+                                </a>
+                                <a href="https://github.com/abhinavsai2006" target="_blank" class="social__link">
+                                    <span>GitHub</span>
+                                </a>
+                                <a href="https://abhinavsai.vercel.app" target="_blank" class="social__link">
+                                    <span>Portfolio</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contact__form-container">
+                        <form class="contact__form" id="contact-form">
+                            <div class="form-group">
+                                <label for="name" class="form-label">Name</label>
+                                <input type="text" id="name" name="name" class="form-control" required>
+                                <div class="form-error hidden" id="name-error">Please enter your name</div>
+                            </div>
+                            <div class="form-group">
+                                <label for="email" class="form-label">Email</label>
+                                <input type="email" id="email" name="email" class="form-control" required>
+                                <div class="form-error hidden" id="email-error">Please enter a valid email</div>
+                            </div>
+                            <div class="form-group">
+                                <label for="subject" class="form-label">Subject</label>
+                                <input type="text" id="subject" name="subject" class="form-control" required>
+                                <div class="form-error hidden" id="subject-error">Please enter a subject</div>
+                            </div>
+                            <div class="form-group">
+                                <label for="message" class="form-label">Message</label>
+                                <textarea id="message" name="message" class="form-control" rows="5" required></textarea>
+                                <div class="form-error hidden" id="message-error">Please enter your message</div>
+                            </div>
+                            <button type="submit" class="btn btn--primary btn--full-width">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__content">
+                <div class="footer__info">
+                    <h3 class="footer__title">Madapati Abhinav Sai</h3>
+                    <p class="footer__description">AI & ML Specialist | B.Tech CSE Student @VIT-AP University</p>
+                    <p class="footer__tagline">Exploring Programming, AI & Software Development</p>
+                </div>
+                <div class="footer__links">
+                    <a href="#home" class="footer__link">Home</a>
+                    <a href="#about" class="footer__link">About</a>
+                    <a href="#projects" class="footer__link">Projects</a>
+                    <a href="#skills" class="footer__link">Skills</a>
+                    <a href="#experience" class="footer__link">Experience</a>
+                    <a href="#contact" class="footer__link">Contact</a>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <p class="footer__copyright">
+                    © 2025 Madapati Abhinav Sai. All rights reserved. Made with ❤️ in India.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
